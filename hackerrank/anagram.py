@@ -11,6 +11,8 @@ import sys
 # Complete the makeAnagram function below.
 def makeAnagram(a, b):
 
+    # Custom code
+    
     union = set(a) & set(b)
     
     count = 0
@@ -29,6 +31,8 @@ def makeAnagram(a, b):
         count += abs(n1-n2)
         
     return count
+
+    # / Custom code
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
