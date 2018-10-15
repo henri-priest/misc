@@ -1,1 +1,1 @@
-# Examples of HackerRank conding quizes
+# Examples of HackerRank coding quizes
