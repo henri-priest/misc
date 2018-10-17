@@ -1,0 +1,22 @@
+tags = [
+    "#iot #austin",
+    "#iot #dallas",
+    "#iot #atlanta",
+    "#iot #oxford",
+    "#iot #robot",
+    "#iot #3d",
+    "#iot #drone",
+    "#iot #app",
+    "#iot #python",
+    "#iot #google",
+    "#iot #health",
+    "#iot #oil",
+    "#iot #internet",
+    "#iot #wireless",
+    "#iot #program",
+    "#iot #print",
+    "#iot #wan",
+    "#iot #conference",
+    "#iot #auto",
+    "#iot #international"
+]
