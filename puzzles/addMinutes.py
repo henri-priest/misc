@@ -14,13 +14,16 @@ def addMinutes(time, offset):
     # Enforce that offset is an integer
     offset = int(offset)
 
+    # Break out hours/minutes and calc offset (since it loops around ever 12hrs)
     hours = time.split(' ')[0].split(":")[0]
     minutes = time.split(' ')[0].split(":")[1]
     total_min = int(hours) * 60 + int(minutes)
     new_min = total_min + offset
 
+    # Current AM/PM value
     ampm = time.split(" ")[1]
 
+    # Calculate how many times AM/PM rolls over
     if abs(offset) >= min_per_12hrs:
          am_pm_flips = int( abs(offset) / min_per_12hrs )
     else:
@@ -35,18 +38,21 @@ def addMinutes(time, offset):
             else:
                 am_pm_flips = 0
 
+    # Only change AM/PM on odd numbered rollovers                
     if am_pm_flips % 2 != 0:
         if ampm == "AM":
             ampm = "PM"
         else:
             ampm = "AM"
 
+    # Calculate new time Value
     new_time = new_min % min_per_12hrs
     new_hour = int( new_time / 60)
     if new_hour == 0:
         new_hour = 12
     new_min = new_time % 60
 
+    # Stuff new time value back into original format and return
     final_time = str(new_hour) + ":" + str(new_min).zfill(2) + " " + ampm
     return final_time
 
