@@ -24,7 +24,7 @@ def addMinutes(time, offset):
     if abs(offset) >= min_per_12hrs:
          am_pm_flips = int( abs(offset) / min_per_12hrs )
     else:
-        if new_min < 0 or new_min >= min_per_12hrs:
+        if (new_min < 0 or new_min >= min_per_12hrs) and hours != "12":
             am_pm_flips = 1
         else:
             am_pm_flips = 0
@@ -53,11 +53,13 @@ def runTests():
     assert addMinutes("12:00 AM", 1440) == "12:00 AM"
     assert addMinutes("12:00 AM", 1441) == "12:01 AM"
     assert addMinutes("12:00 AM", 1439) == "11:59 PM"
+    assert addMinutes("12:00 AM", 60) == "1:00 AM"
     assert addMinutes("12:00 PM", 720) == "12:00 AM"
     assert addMinutes("12:00 PM", -720) == "12:00 AM"
     assert addMinutes("12:00 PM", 1440) == "12:00 PM"
     assert addMinutes("12:00 PM", 1441) == "12:01 PM"
     assert addMinutes("12:00 PM", 1439) == "11:59 AM"
+    assert addMinutes("12:00 PM", 60) == "1:00 PM"
     print("All tests passed...")
 
 if __name__ == "__main__":
