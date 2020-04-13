@@ -60,31 +60,44 @@ def runTests():
     assert addMinutes("9:13 AM", -552) == "12:01 AM"
     assert addMinutes("9:13 AM", -553) == "12:00 AM"
     assert addMinutes("9:13 AM", -554) == "11:59 PM"
+
     assert addMinutes("12:00 AM", -720) == "12:00 PM"
     assert addMinutes("12:00 AM", 720) == "12:00 PM"
     assert addMinutes("12:00 AM", 1439) == "11:59 PM"
     assert addMinutes("12:00 AM", 1440) == "12:00 AM"
     assert addMinutes("12:00 AM", 1441) == "12:01 AM"
+    assert addMinutes("12:00 AM", 2159) == "11:59 AM"
+    assert addMinutes("12:00 AM", 2160) == "12:00 PM"
+    assert addMinutes("12:00 AM", 2161) == "12:01 PM"
     assert addMinutes("12:00 AM", 60) == "1:00 AM"
+
     assert addMinutes("12:00 PM", 720) == "12:00 AM"
     assert addMinutes("12:00 PM", -720) == "12:00 AM"
     assert addMinutes("12:00 PM", -1440) == "12:00 PM"
     assert addMinutes("12:00 PM", 1439) == "11:59 AM"
     assert addMinutes("12:00 PM", 1440) == "12:00 PM"
     assert addMinutes("12:00 PM", 1441) == "12:01 PM"
+    assert addMinutes("12:00 PM", 2159) == "11:59 PM"
+    assert addMinutes("12:00 PM", 2160) == "12:00 AM"
+    assert addMinutes("12:00 PM", 2161) == "12:01 AM"
     assert addMinutes("12:00 PM", 60) == "1:00 PM"
+
     assert addMinutes("11:59 AM", 0) == "11:59 AM"
     assert addMinutes("11:59 AM", 1) == "12:00 PM"
     assert addMinutes("11:59 AM", 2) == "12:01 PM"
+
     assert addMinutes("11:59 PM", 0) == "11:59 PM"
     assert addMinutes("11:59 PM", 1) == "12:00 AM"
     assert addMinutes("11:59 PM", 2) == "12:01 AM"
+
     assert addMinutes("12:01 PM", -2) == "11:59 AM"
     assert addMinutes("12:01 PM", -1) == "12:00 PM"
     assert addMinutes("12:01 PM", 0) == "12:01 PM"
+
     assert addMinutes("12:01 AM", -2) == "11:59 PM"
     assert addMinutes("12:01 AM", -1) == "12:00 AM"
     assert addMinutes("12:01 AM", 0) == "12:01 AM"
+
     print("All tests passed...")
 
 if __name__ == "__main__":
