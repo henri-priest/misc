@@ -34,7 +34,7 @@ def addMinutes(time, offset):
     print("AM/PM flips: " + str(am_pm_flips))
 
     final_time = str(new_hour) + ":" + str(new_min).zfill(2)
-    print("New time: " + final_time)
+    return final_time
 
 if __name__ == "__main__":
 
@@ -47,4 +47,5 @@ if __name__ == "__main__":
     time = sys.argv[1]
     offset = sys.argv[2]
 
-    addMinutes(time, offset)
+    calculated_time = addMinutes(time, offset)
+    print("New time: " + calculated_time)
