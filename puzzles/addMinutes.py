@@ -14,9 +14,6 @@ def addMinutes(time, offset):
     # Enforce that offset is an integer
     offset = int(offset)
 
-    print("Time: " + time + " , Type: " + str(type(time)))
-    print("Offset: " + str(offset) + " , Type: " + str(type(offset)))
-
     hours = time.split(' ')[0].split(":")[0]
     minutes = time.split(' ')[0].split(":")[1]
     total_min = int(hours) * 60 + int(minutes)
@@ -44,18 +41,20 @@ def addMinutes(time, offset):
         new_hour = 12
     new_min = new_time % 60
 
-    print("AM/PM flips: " + str(am_pm_flips))
-
     final_time = str(new_hour) + ":" + str(new_min).zfill(2) + " " + ampm
     return final_time
 
 def runTests():
     assert addMinutes("9:13 AM", 200) == "12:33 PM"
+    assert addMinutes("9:13 AM", 1) == "9:14 AM"
+    assert addMinutes("9:13 AM", -1) == "9:12 AM"
     assert addMinutes("12:00 AM", 720) == "12:00 PM"
+    assert addMinutes("12:00 AM", -720) == "12:00 PM"
     assert addMinutes("12:00 AM", 1440) == "12:00 AM"
     assert addMinutes("12:00 AM", 1441) == "12:01 AM"
     assert addMinutes("12:00 AM", 1439) == "11:59 PM"
     assert addMinutes("12:00 PM", 720) == "12:00 AM"
+    assert addMinutes("12:00 PM", -720) == "12:00 AM"
     assert addMinutes("12:00 PM", 1440) == "12:00 PM"
     assert addMinutes("12:00 PM", 1441) == "12:01 PM"
     assert addMinutes("12:00 PM", 1439) == "11:59 AM"
