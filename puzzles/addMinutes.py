@@ -52,7 +52,9 @@ def addMinutes(time, offset):
 def runTests():
     assert addMinutes("9:13 AM", 200) == "12:33 PM"
     assert addMinutes("12:00 AM", 720) == "12:00 PM"
+    assert addMinutes("12:00 AM", 1440) == "12:00 AM"
     assert addMinutes("12:00 PM", 720) == "12:00 AM"
+    assert addMinutes("12:00 PM", 1440) == "12:00 PM"
     print("All tests passed...")
 
 if __name__ == "__main__":
