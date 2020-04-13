@@ -51,8 +51,14 @@ def addMinutes(time, offset):
 
 def runTests():
     assert addMinutes("9:13 AM", 200) == "12:33 PM"
+    assert addMinutes("12:00 AM", 720) == "12:00 PM"
+    assert addMinutes("12:00 PM", 720) == "12:00 AM"
 
 if __name__ == "__main__":
+
+    if  sys.argv[1] == "tests":
+        runTests()
+        exit(0)
 
     n = len(sys.argv)
 
@@ -63,8 +69,5 @@ if __name__ == "__main__":
     time = sys.argv[1]
     offset = sys.argv[2]
 
-    if time == "run_tests":
-        runTests()
-    else:
-        calculated_time = addMinutes(time, offset)
-        print("New time: " + calculated_time)
+    calculated_time = addMinutes(time, offset)
+    print("New time: " + calculated_time)
