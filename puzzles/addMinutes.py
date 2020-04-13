@@ -4,7 +4,7 @@ import re
 def addMinutes(time, offset):
 
     # Enforce the time stamp pattern on the time argument
-    if not re.match(r"^([0-9]|1[0,1,2]):[0-9]{2} [A,P]M$", time):
+    if not re.match(r"^([1-9]|1[0,1,2]):([0-5][0-9]) [A,P]M$", time):
         print("Enter time in format [H]H:MM {AM|PM}")
         exit(1)
 
