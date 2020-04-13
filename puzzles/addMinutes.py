@@ -49,6 +49,9 @@ def addMinutes(time, offset):
     final_time = str(new_hour) + ":" + str(new_min).zfill(2) + " " + ampm
     return final_time
 
+def runTests():
+    assert addMinutes("9:13 AM", 200) == "12:33 PM"
+
 if __name__ == "__main__":
 
     n = len(sys.argv)
@@ -60,5 +63,8 @@ if __name__ == "__main__":
     time = sys.argv[1]
     offset = sys.argv[2]
 
-    calculated_time = addMinutes(time, offset)
-    print("New time: " + calculated_time)
+    if time == "run_tests":
+        runTests()
+    else:
+        calculated_time = addMinutes(time, offset)
+        print("New time: " + calculated_time)
