@@ -23,14 +23,14 @@ def addMinutes(time, offset):
     new_min = total_min + offset
 
     ampm = time.split(" ")[1]
-    am_pm_flips = int(total_min / min_per_12hrs)
+    am_pm_flips = int(new_min / min_per_12hrs)
 
     new_time = new_min % min_per_12hrs
     new_hour = int( new_time / 60)
+    if new_hour == 0:
+        new_hour = hours
     new_min = new_time % 60
 
-    print("New hour: " + str(new_hour))
-    print("New minute: " + str(new_min))
     print("AM/PM flips: " + str(am_pm_flips))
 
     final_time = str(new_hour) + ":" + str(new_min).zfill(2)
