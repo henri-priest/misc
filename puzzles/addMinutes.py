@@ -36,7 +36,7 @@ def addMinutes(time, offset):
         if ampm == "AM":
             ampm = "PM"
         else:
-            ampm == "PM"
+            ampm = "AM"
 
     new_time = new_min % min_per_12hrs
     new_hour = int( new_time / 60)
@@ -53,6 +53,7 @@ def runTests():
     assert addMinutes("9:13 AM", 200) == "12:33 PM"
     assert addMinutes("12:00 AM", 720) == "12:00 PM"
     assert addMinutes("12:00 PM", 720) == "12:00 AM"
+    print("All tests passed...")
 
 if __name__ == "__main__":
 
