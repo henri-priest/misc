@@ -51,6 +51,9 @@ def runTests():
     assert addMinutes("9:13 AM", 166) == "11:59 AM"
     assert addMinutes("9:13 AM", 167) == "12:00 PM"
     assert addMinutes("9:13 AM", 168) == "12:01 PM"
+    assert addMinutes("9:13 AM", -552) == "12:01 AM"
+    assert addMinutes("9:13 AM", -553) == "12:00 AM"
+    assert addMinutes("9:13 AM", -554) == "11:59 PM"
     assert addMinutes("12:00 AM", 720) == "12:00 PM"
     assert addMinutes("12:00 AM", -720) == "12:00 PM"
     assert addMinutes("12:00 AM", 1440) == "12:00 AM"
@@ -63,6 +66,9 @@ def runTests():
     assert addMinutes("12:00 PM", 1441) == "12:01 PM"
     assert addMinutes("12:00 PM", 1439) == "11:59 AM"
     assert addMinutes("12:00 PM", 60) == "1:00 PM"
+    assert addMinutes("11:59 AM", 0) == "11:59 AM"
+    assert addMinutes("11:59 AM", 1) == "12:00 PM"
+    assert addMinutes("11:59 AM", 2) == "12:01 PM"
     print("All tests passed...")
 
 if __name__ == "__main__":
