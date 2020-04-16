@@ -67,6 +67,8 @@ def runTests():
     assert addMinutes("9:13 AM", -553) == "12:00 AM"
     assert addMinutes("9:13 AM", -554) == "11:59 PM"
 
+    assert addMinutes("11:59 AM", 1) == "12:00 PM"
+    assert addMinutes("11:59 AM", 2) == "12:01 PM"
     assert addMinutes("12:00 AM", -720) == "12:00 PM"
     assert addMinutes("12:00 AM", 720) == "12:00 PM"
     assert addMinutes("12:00 AM", 1439) == "11:59 PM"
