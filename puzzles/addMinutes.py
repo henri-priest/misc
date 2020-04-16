@@ -25,10 +25,10 @@ def addMinutes(time, offset):
 
     # Calculate how many times AM/PM rolls over
     if abs(offset) >= min_per_12hrs:
-         am_pm_flips = int( abs(offset) / min_per_12hrs )
+        am_pm_flips = int( abs(offset) / min_per_12hrs )
     else:
         if offset >= 0:
-            if (new_min < 0 or new_min >= min_per_12hrs) and hours != "12":
+            if (new_min >= min_per_12hrs) and hours != "12":
                 am_pm_flips = 1
             else:
                 am_pm_flips = 0
@@ -38,7 +38,7 @@ def addMinutes(time, offset):
             else:
                 am_pm_flips = 0
 
-    # Only change AM/PM on odd numbered rollovers                
+    # Only change AM/PM on odd numbered rollovers
     if am_pm_flips % 2 != 0:
         if ampm == "AM":
             ampm = "PM"
