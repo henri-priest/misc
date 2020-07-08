@@ -4,9 +4,9 @@
 
 ## Setup/Dev (Windows 10)
 
-`git clone https://github.com/henri-priest/misc.git`
+```git clone https://github.com/henri-priest/misc.git```
 
-`cd puzzles/kubes-stock-service`
+````cd misc/puzzles/kubes-stock-service```
 
 ### Test stock API
 
