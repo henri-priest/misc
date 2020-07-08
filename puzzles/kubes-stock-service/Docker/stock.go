@@ -3,17 +3,31 @@ package main
 import (
     "io/ioutil"
     "strconv"
-    //"io"
     "fmt"
     "os"
     "log"
     "net/http"
+    "html"
     "encoding/csv"
     "strings"
     //"time"
 )
 
 func main() {
+
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+    })
+
+    http.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request){
+        fmt.Fprintf(w, "Hi")
+    })
+
+    log.Fatal(http.ListenAndServe(":8081", nil))
+
+}
+
+func query() {
     fmt.Println("Querying Stock API...")
     var symbol  string = os.Getenv("SYMBOL")
     var days string = os.Getenv("NDAYS")
