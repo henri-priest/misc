@@ -26,7 +26,9 @@
 
 ```docker build --tag go-web-app:1.0 .```
 
-```docker run --publish 8080:8080 --detach --name app go-web-app:1.0```
+```export API_KEY=123ABC; export SYMBOL=AMZN; export NDAYS=3```
+
+```docker run --env API_KEY=$API_KEY --env SYMBOL=$SYMBOL --env NDAYS=$NDAYS  --publish 8080:8080 --detach --name app go-web-app:1.0```
 
 ### Publish container
 
