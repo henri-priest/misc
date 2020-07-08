@@ -5,4 +5,6 @@ COPY ./stock.go .
 
 RUN go build stock.go
 
-CMD sleep 100000
+EXPOSE 8080/tcp
+
+CMD ["./stock"]
