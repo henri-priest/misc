@@ -26,7 +26,7 @@
 
 ```docker build --tag go-web-app:1.0 .```
 
-```docker run --publish 8000:8080 --detach --name app go-web-app:1.0```
+```docker run --publish 8080:8080 --detach --name app go-web-app:1.0```
 
 ### Publish container
 
