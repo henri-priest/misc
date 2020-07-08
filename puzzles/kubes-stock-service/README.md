@@ -30,6 +30,10 @@
 
 ### Publish container
 
+```docker build --tag go-web-app:1.0 .```
+
+```docker tag go-web-app:1.0 hpriest445/go-web-app:1.0```
+
 ```docker push hpriest445/go-web-app:1.0```
 
 ### Run in Minikube
