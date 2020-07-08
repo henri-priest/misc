@@ -2,21 +2,21 @@
 
 ...
 
-## Setup/Dev (Windows 10)
+## Setup
 
-```git clone https://github.com/henri-priest/misc.git```
+```git clone git@github.com:henri-priest/misc.git```
 
 ```cd misc/puzzles/kubes-stock-service```
 
 ### Test stock API
 
-```set API_KEY=123ABC```
+```export API_KEY=123ABC```
 
-```set SYMBOL=AMZN```
+```export SYMBOL=AMZN```
 
-```set NDAYS=3```
+```export NDAYS=3```
 
-```curl -s "https://www.alphavantage.co/query?apikey=%API_KEY%&function=TIME_SERIES_DAILY_ADJUSTED&symbol=%SYMBOL%"```
+```curl -s "https://www.alphavantage.co/query?apikey=$API_KEY&function=TIME_SERIES_DAILY_ADJUSTED&symbol=$SYMBOL"```
 
 ### Test Go code
 
@@ -24,7 +24,9 @@
 
 ### Test Go code and run in local Docker container
 
-```docker run ...```
+```docker build --tag stock:1.0 .```
+
+```docker run --publish 8000:8080 --detach --name test stock:1.0```
 
 
 ### Publish container
