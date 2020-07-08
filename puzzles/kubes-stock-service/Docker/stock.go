@@ -2,7 +2,7 @@ package main
 
 import (
     "io/ioutil"
-    "io"
+    //"io"
     "fmt"
     "os"
     "log"
@@ -34,19 +34,17 @@ func main() {
     responseString := string(content)
     //fmt.Println(responseString)
     r := csv.NewReader(strings.NewReader(responseString))
-    for {
-		record, err := r.Read()
-        if err == io.EOF {
 
-			break
-
-		}
+    for i := 0; i <=5; i++ {
+        record, err := r.Read()
+        //if err == io.EOF {
+        //    break
+        //}
         if err != nil {
-			log.Fatal(err)
-		}
-		fmt.Println(record)
-		fmt.Println(record[4])
-	}
+            log.Fatal(err)
+        }
+        fmt.Println(record[4])
+    }
 
     //fmt.Println("sleeping...")
     //time.Sleep(time.Second * 5)
