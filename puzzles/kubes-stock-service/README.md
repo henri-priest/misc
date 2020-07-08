@@ -24,7 +24,9 @@
 
 ### Test Go code and run in local Docker container
 
-```docker run ...```
+```docker build --tag stock:1.0 .```
+
+```docker run --publish 8000:8080 --detach --name test stock:1.0```
 
 
 ### Publish container
