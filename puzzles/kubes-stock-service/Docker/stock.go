@@ -6,6 +6,8 @@ import (
     "os"
     "log"
     "net/http"
+    "encoding/csv"
+    "strings"
     //"time"
 )
 
@@ -29,7 +31,16 @@ func main() {
     }
 
     responseString := string(content)
-    fmt.Println(responseString)
+    //fmt.Println(responseString)
+    r := csv.NewReader(strings.NewReader(responseString))
+    for {
+		record, err := r.Read()
+        if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(record)
+		fmt.Println(record[4])
+	}
 
     //fmt.Println("sleeping...")
     //time.Sleep(time.Second * 5)
