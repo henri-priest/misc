@@ -18,6 +18,10 @@
 
 ```curl -s "https://www.alphavantage.co/query?apikey=%API_KEY%&function=TIME_SERIES_DAILY_ADJUSTED&symbol=%SYMBOL%"```
 
+### Test Go code
+
+```go run stock.go```
+
 ### Test Go code and run in local Docker container
 
 ```docker run ...```
