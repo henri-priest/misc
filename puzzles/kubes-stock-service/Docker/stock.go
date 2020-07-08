@@ -6,28 +6,22 @@ import (
     "fmt"
     "os"
     "log"
+    //"html"
     "net/http"
-    "html"
     "encoding/csv"
     "strings"
     //"time"
 )
 
 func main() {
-
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+        value := query()
+        fmt.Fprintf(w, value)
     })
-
-    http.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request){
-        fmt.Fprintf(w, "Hi")
-    })
-
     log.Fatal(http.ListenAndServe(":8081", nil))
-
 }
 
-func query() {
+func query() string{
     fmt.Println("Querying Stock API...")
     var symbol  string = os.Getenv("SYMBOL")
     var days string = os.Getenv("NDAYS")
@@ -50,24 +44,30 @@ func query() {
     r := csv.NewReader(strings.NewReader(responseString))
 
     max, err := strconv.Atoi(days)
-    var total float32 = 0;
+    var total float64 = 0;
     for i := 0; i <= max; i++ {
         record, err := r.Read()
         if err != nil {
             log.Fatal(err)
         }
         if i > 0 {
-            value, err := strconv.ParseFloat(record[4], 32)
+            value, err := strconv.ParseFloat(record[4], 64)
             fmt.Printf("Date = %s, Close price = %f\n", record[0], value)
             if err != nil {
                log.Fatal(err)
             }
-            total += float32(value)
+            total += value
         }
     }
 
-    total = total / float32(max)
+    total = total / float64(max)
     fmt.Printf("Final average = %f\n", total)
+    ret := strconv.FormatFloat(total, 'E', -1, 64)
+    if err != nil {
+        log.Fatal(err)
+     }
+
+    return ret
 
     //fmt.Println("sleeping...")
     //time.Sleep(time.Second * 5)
