@@ -25,6 +25,11 @@
 
 ```minikube start --driver=virtualbox```
 
+
+### Publish Kubernetes manifest
+
+...
+
 ## Final test- Run in clean Linux VM
 
 ...
