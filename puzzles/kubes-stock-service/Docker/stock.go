@@ -33,20 +33,27 @@ func main() {
     }
 
     responseString := string(content)
-    //fmt.Println(responseString)
     r := csv.NewReader(strings.NewReader(responseString))
 
     max, err := strconv.Atoi(days)
+    var total float32 = 0;
     for i := 0; i <= max; i++ {
         record, err := r.Read()
-        //if err == io.EOF {
-        //    break
-        //}
         if err != nil {
             log.Fatal(err)
         }
         fmt.Println(record[4])
+        if i > 0 {
+            value, err := strconv.ParseFloat(record[4], 32)
+            if err != nil {
+               log.Fatal(err)
+            }
+            total += float32(value)
+        }
     }
+
+    total = total / float32(max)
+    fmt.Println(total)
 
     //fmt.Println("sleeping...")
     //time.Sleep(time.Second * 5)
