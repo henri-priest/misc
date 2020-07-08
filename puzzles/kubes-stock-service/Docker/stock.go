@@ -44,7 +44,8 @@ func query() string{
     r := csv.NewReader(strings.NewReader(responseString))
 
     max, err := strconv.Atoi(days)
-    var total float64 = 0;
+    var total float64 = 0
+    var dailyVals []string
     for i := 0; i <= max; i++ {
         record, err := r.Read()
         if err != nil {
@@ -53,6 +54,7 @@ func query() string{
         if i > 0 {
             value, err := strconv.ParseFloat(record[4], 64)
             fmt.Printf("Date = %s, Close price = %f\n", record[0], value)
+            dailyVals = append(dailyVals, record[4])
             if err != nil {
                log.Fatal(err)
             }
@@ -67,7 +69,8 @@ func query() string{
         log.Fatal(err)
      }
 
-    ret := symbol + " data=[], average = " + strAv
+    convertedDailyVals := strings.Join(dailyVals," ")
+    ret := symbol + " data=[" + convertedDailyVals + "], average = " + strAv
     return ret
 
     //fmt.Println("sleeping...")
