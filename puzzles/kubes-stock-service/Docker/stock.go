@@ -2,6 +2,7 @@ package main
 
 import (
     "io/ioutil"
+    "io"
     "fmt"
     "os"
     "log"
@@ -35,6 +36,11 @@ func main() {
     r := csv.NewReader(strings.NewReader(responseString))
     for {
 		record, err := r.Read()
+        if err == io.EOF {
+
+			break
+
+		}
         if err != nil {
 			log.Fatal(err)
 		}
