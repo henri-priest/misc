@@ -40,7 +40,9 @@
 
 ### Run in Minikube
 
-```minikube start --driver=docker```
+```# Minikube required upsizing EC2 to t2.xlarge```
+
+```minikube start --driver=docker ```
 
 
 ### Publish Kubernetes manifest
