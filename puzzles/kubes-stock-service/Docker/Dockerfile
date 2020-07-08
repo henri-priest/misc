@@ -3,4 +3,6 @@ FROM golang:1.14
 WORKDIR /go/src/app
 COPY ./stock.go .
 
-CMD ["sleep 10000"]
+RUN go build stock.go
+
+CMD sleep 100000

@@ -6,7 +6,7 @@ import (
     "os"
     "log"
     "net/http"
-    "time"
+    //"time"
 )
 
 func main() {
@@ -32,6 +32,6 @@ func main() {
     fmt.Println(responseString)
 
     fmt.Println("sleeping...")
-    time.Sleep(time.Second * 5)
+    //time.Sleep(time.Second * 5)
 
 }
