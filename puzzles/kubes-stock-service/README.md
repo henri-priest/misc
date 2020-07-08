@@ -10,7 +10,7 @@
 
 ### Test stock API
 
-```https://www.alphavantage.co/query?apikey=<API_KEY>&function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT ```
+```curl "https://www.alphavantage.co/query?apikey=123ABC&function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT"```
 
 ### Test Go code and run in local Docker container
 
