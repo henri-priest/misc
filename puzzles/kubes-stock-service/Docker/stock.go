@@ -62,11 +62,12 @@ func query() string{
 
     total = total / float64(max)
     fmt.Printf("Final average = %f\n", total)
-    ret := strconv.FormatFloat(total, 'f', -1, 64)
+    strAv := strconv.FormatFloat(total, 'f', -1, 64)
     if err != nil {
         log.Fatal(err)
      }
 
+    ret := symbol + " data=[], average = " + strAv
     return ret
 
     //fmt.Println("sleeping...")
