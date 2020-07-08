@@ -33,18 +33,16 @@ func main() {
     //fmt.Println(responseString)
 
     type Message struct {
-	    "2020-02-13": {
-		"1. open": "2144.9900",
-	        "2. high": "2170.2800",
-		"3. low": "2142.0000",
-		"4. close": "2149.8700",
-		"5. adjusted close": "2149.8700",
-		"6. volume": "3031791",
-		"7. dividend amount": "0.0000",
-		"8. split coefficient": "1.0000"
-	      }
-    {
-    var out string
+        Open string
+        High string
+        Low string
+        Close string
+        Adjusted string
+        Volume string
+        Dividend string
+        Split string
+    }
+    var out Message
 
     json.Unmarshal([]byte(responseString), &out)
     fmt.Print(out)
