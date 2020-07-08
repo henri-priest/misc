@@ -45,7 +45,6 @@ func query() string{
 
     max, err := strconv.Atoi(days)
     var total float64 = 0;
-    var dailyVals [string]
     for i := 0; i <= max; i++ {
         record, err := r.Read()
         if err != nil {
@@ -54,7 +53,6 @@ func query() string{
         if i > 0 {
             value, err := strconv.ParseFloat(record[4], 64)
             fmt.Printf("Date = %s, Close price = %f\n", record[0], value)
-            dailyVals.append(record[4])
             if err != nil {
                log.Fatal(err)
             }
