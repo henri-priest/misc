@@ -9,8 +9,9 @@ import (
 
 func main() {
     fmt.Println("Querying Stock API...")
-    fmt.Println("Stock:", os.Getenv("SYMBOL"))
-    fmt.Println("Days:", os.Getenv("NDAYS"))
-    //s := "postgres://user:pass@host.com:5432/path?k=v#f"
+    var symbol  string = os.Getenv("SYMBOL")
+    //var days string = os.Getenv("NDAYS")
+    url := fmt.Sprintf("https://www.alphavantage.co/query?apikey=1123function=TIME_SERIES_DAILY_ADJUSTED&symbol=%s", symbol)
+    fmt.Println(url)
     //res, err := url.Parse(s)
 }
