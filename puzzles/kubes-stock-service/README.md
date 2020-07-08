@@ -24,3 +24,7 @@
 ## Run in Minikube
 
 ```minikube start --driver=virtualbox```
+
+## Final test- Run in clean Linux VM
+
+...
