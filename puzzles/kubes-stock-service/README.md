@@ -8,7 +8,7 @@
 
 `kubes-stock-service`
 
-## #Test stock API
+### Test stock API
 
 ```https://www.alphavantage.co/query?apikey=<API_KEY>&function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT ```
 
