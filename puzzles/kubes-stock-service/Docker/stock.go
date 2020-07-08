@@ -42,9 +42,9 @@ func main() {
         if err != nil {
             log.Fatal(err)
         }
-        fmt.Println(record[4])
         if i > 0 {
             value, err := strconv.ParseFloat(record[4], 32)
+            fmt.Printf("Date = %s, Close price = %f\n", record[0], value)
             if err != nil {
                log.Fatal(err)
             }
@@ -53,7 +53,7 @@ func main() {
     }
 
     total = total / float32(max)
-    fmt.Println(total)
+    fmt.Printf("Final average = %f\n", total)
 
     //fmt.Println("sleeping...")
     //time.Sleep(time.Second * 5)
