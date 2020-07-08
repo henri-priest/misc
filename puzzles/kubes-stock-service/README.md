@@ -24,14 +24,13 @@
 
 ### Test Go code and run in local Docker container
 
-```docker build --tag stock:1.0 .```
+```docker build --tag go-web-app:1.0 .```
 
-```docker run --publish 8000:8080 --detach --name test stock:1.0```
-
+```docker run --publish 8000:8080 --detach --name app go-web-app:1.0```
 
 ### Publish container
 
-```docker push ...```
+```docker push hpriest445/go-web-app:1.0```
 
 ### Run in Minikube
 
