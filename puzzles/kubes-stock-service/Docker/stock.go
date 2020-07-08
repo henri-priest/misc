@@ -35,7 +35,9 @@ func main() {
     var out map[string]interface{}
 
     json.Unmarshal([]byte(responseString), &out)
-    fmt.Print(out["Time Series (Daily)"])
+    for i := range out["Time Series (Daily)"].(map[string]interface{}) {
+        fmt.Println(i)
+    }
 
     //fmt.Println("sleeping...")
     //time.Sleep(time.Second * 5)
