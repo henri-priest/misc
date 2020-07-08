@@ -23,4 +23,4 @@
 
 ## Run in Minikube
 
-...
+```minikube start --driver=virtualbox```
