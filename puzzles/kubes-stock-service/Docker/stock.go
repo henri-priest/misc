@@ -32,20 +32,10 @@ func main() {
     responseString := string(content)
     //fmt.Println(responseString)
 
-    type Message struct {
-        Open string
-        High string
-        Low string
-        Close string
-        Adjusted string
-        Volume string
-        Dividend string
-        Split string
-    }
-    var out Message
+    var out map[string]interface{}
 
     json.Unmarshal([]byte(responseString), &out)
-    fmt.Print(out)
+    fmt.Print(out["Time Series (Daily)"])
 
     //fmt.Println("sleeping...")
     //time.Sleep(time.Second * 5)
