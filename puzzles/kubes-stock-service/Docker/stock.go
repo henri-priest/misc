@@ -18,7 +18,7 @@ func main() {
         value := query()
         fmt.Fprintf(w, value)
     })
-    log.Fatal(http.ListenAndServe(":8081", nil))
+    log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func query() string{
@@ -62,7 +62,7 @@ func query() string{
 
     total = total / float64(max)
     fmt.Printf("Final average = %f\n", total)
-    ret := strconv.FormatFloat(total, 'E', -1, 64)
+    ret := strconv.FormatFloat(total, 'f', -1, 64)
     if err != nil {
         log.Fatal(err)
      }
