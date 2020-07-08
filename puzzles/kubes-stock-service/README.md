@@ -2,19 +2,19 @@
 
 ...
 
-## Setup/Dev (Windows 10)
+## Setup
 
-```git clone https://github.com/henri-priest/misc.git```
+```git clone git@github.com:henri-priest/misc.git```
 
 ```cd misc/puzzles/kubes-stock-service```
 
 ### Test stock API
 
-```set API_KEY=123ABC```
+```export API_KEY=123ABC```
 
-```set SYMBOL=AMZN```
+```export SYMBOL=AMZN```
 
-```set NDAYS=3```
+```export NDAYS=3```
 
 ```curl -s "https://www.alphavantage.co/query?apikey=%API_KEY%&function=TIME_SERIES_DAILY_ADJUSTED&symbol=%SYMBOL%"```
 
