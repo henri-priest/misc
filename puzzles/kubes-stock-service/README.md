@@ -44,6 +44,7 @@
 
 ```minikube start --driver=docker ```
 
+```kubectl apply -f ./manifest.yaml```
 
 ### Publish Kubernetes manifest
 
