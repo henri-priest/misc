@@ -32,6 +32,8 @@
 
 ### Publish container
 
+```cd Docker```
+
 ```docker build --tag go-web-app:1.0 .```
 
 ```docker tag go-web-app:1.0 hpriest445/go-web-app:1.0```
@@ -40,11 +42,13 @@
 
 ### Run in Minikube
 
+```cd Kubernetes```
+
 ```# Minikube required upsizing EC2 to t2.xlarge```
 
 ```minikube start --driver=docker ```
 
-```kubectl apply -f ./manifest.yaml```
+```kubectl apply -f .```
 
 ### Publish Kubernetes manifest
 
