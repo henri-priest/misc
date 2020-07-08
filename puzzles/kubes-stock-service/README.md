@@ -16,7 +16,7 @@
 
 ```export NDAYS=3```
 
-```curl -s "https://www.alphavantage.co/query?apikey=$API_KEY&function=TIME_SERIES_DAILY_ADJUSTED&symbol=$YMBOL"```
+```curl -s "https://www.alphavantage.co/query?apikey=$API_KEY&function=TIME_SERIES_DAILY_ADJUSTED&symbol=$SYMBOL"```
 
 ### Test Go code
 
