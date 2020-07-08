@@ -6,24 +6,24 @@
 
 `git clone https://github.com/henri-priest/misc.git`
 
-`kubes-stock-service`
+`cd puzzles/kubes-stock-service`
 
 ### Test stock API
 
 ```https://www.alphavantage.co/query?apikey=<API_KEY>&function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT ```
 
-### Run in local Docker container
+### Test Go code and run in local Docker container
 
-...
+```docker run ...```
 
 
 ### Publish container
 
-...
+```docker push ...```
 
 ### Run in Minikube
 
-```minikube start --driver=virtualbox```
+```minikube start --driver=docker```
 
 
 ### Publish Kubernetes manifest
