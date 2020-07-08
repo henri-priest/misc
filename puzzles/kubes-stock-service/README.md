@@ -22,7 +22,7 @@
 
 ```go run stock.go```
 
-### Test Go code and run in local Docker container
+### Run in local Docker container
 
 ```docker build --tag go-web-app:1.0 .```
 
