@@ -6,7 +6,7 @@
 
 ```git clone https://github.com/henri-priest/misc.git```
 
-````cd misc/puzzles/kubes-stock-service```
+```cd misc/puzzles/kubes-stock-service```
 
 ### Test stock API
 
