@@ -21,7 +21,7 @@ func main() {
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
-func query() string{
+func query() string {
     fmt.Println("Querying Stock API...")
     var symbol  string = os.Getenv("SYMBOL")
     var days string = os.Getenv("NDAYS")
