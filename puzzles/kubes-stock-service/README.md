@@ -48,7 +48,7 @@
 
 ```minikube start --driver=docker ```
 
-```kubectl create secret generic API_KEY --from-literal='API_KEY='<...>'```
+```kubectl create secret generic apikey --from-literal='apikey=<...>'```
 
 ```kubectl apply -f .```
 
