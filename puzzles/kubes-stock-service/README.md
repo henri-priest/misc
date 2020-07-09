@@ -51,11 +51,3 @@
 ```kubectl create secret generic apikey --from-literal='apikey=<...>'```
 
 ```kubectl apply -f .```
-
-### Publish Kubernetes manifest
-
-...
-
-## Final test- Run in clean Linux VM
-
-...
