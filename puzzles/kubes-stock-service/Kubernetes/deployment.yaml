@@ -24,7 +24,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: apikey
-                 key: apikey
+                key: apikey
         envFrom:      
         - configMapRef:
             name: go-configmap
