@@ -21,10 +21,10 @@ spec:
         - containerPort: 8080
         env:
           - name: APIKEY
-          valueFrom:
-             secretKeyRef:
-               name: apikey
-               key: apikey
+            valueFrom:
+              secretKeyRef:
+                name: apikey
+                 key: apikey
         envFrom:      
         - configMapRef:
             name: go-configmap
