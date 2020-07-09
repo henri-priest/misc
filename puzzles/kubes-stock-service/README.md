@@ -52,4 +52,6 @@
 
 ```kubectl apply -f .```
 
+```sleep 20```
+
 ```curl $(minikube service  go-stock-app --url)```
