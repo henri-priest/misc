@@ -19,6 +19,12 @@ spec:
         image: hpriest445/go-web-app:1.0
         ports:
         - containerPort: 8080
+        env:
+       - name: APIKEY
+         valueFrom:
+           secretKeyRef:
+             name: apikey
+             key: apikey
         envFrom:      
         - configMapRef:
             name: go-configmap
