@@ -51,3 +51,5 @@
 ```kubectl create secret generic apikey --from-literal='apikey=<...>'```
 
 ```kubectl apply -f .```
+
+```curl $(minikube service  go-stock-app --url)```
