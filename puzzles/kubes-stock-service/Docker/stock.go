@@ -25,8 +25,9 @@ func query() string{
     fmt.Println("Querying Stock API...")
     var symbol  string = os.Getenv("SYMBOL")
     var days string = os.Getenv("NDAYS")
+    var apikey apikey = os.Getenv("APIKEY")
 
-    site := fmt.Sprintf("https://www.alphavantage.co/query?apikey=1123&function=TIME_SERIES_DAILY_ADJUSTED&symbol=%s&datatype=csv", symbol)
+    site := fmt.Sprintf("https://www.alphavantage.co/query?apikey=$apikey&function=TIME_SERIES_DAILY_ADJUSTED&symbol=%s&datatype=csv", symbol)
     fmt.Println(site)
 
     res, err := http.Get(site)
