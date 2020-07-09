@@ -48,6 +48,8 @@
 
 ```minikube start --driver=docker ```
 
+```kubectl create secret generic API_KEY --from-literal='API_KEY='<...>'```
+
 ```kubectl apply -f .```
 
 ### Publish Kubernetes manifest
