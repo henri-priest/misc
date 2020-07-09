@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: go-configmap
 data:
-  SYMBOL: ${SYMBOL}
+  SYMBOL: "MSFT"
+  NDAYS: "7"
