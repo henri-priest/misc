@@ -55,3 +55,9 @@
 ```sleep 20```
 
 ```curl $(minikube service  go-stock-app --url)```
+
+## Bugs:
+
+* stock.go needs to use the apikey variable. Make env var ```APIKEY``` to match what's in kubes.
+
+* Docker hub image still has ```apikey=1123```, it not using the actual secret (secret is passed into container though).
