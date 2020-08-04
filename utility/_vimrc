@@ -24,7 +24,7 @@ set softtabstop=4
 set expandtab
 
 " OSX only
-"set transparancy=10
+"set transparency=10
 
 autocmd BufWritePre <buffer> :%s/\s\+$//e
 
