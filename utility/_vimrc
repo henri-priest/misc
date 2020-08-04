@@ -23,6 +23,8 @@ set softtabstop=4
 
 set expandtab
 
+" OSX only
+"set transparancy=10
 
 autocmd BufWritePre <buffer> :%s/\s\+$//e
 
@@ -97,9 +99,12 @@ endfunction
 
 set backup
 
+" Win only
 set backupdir=C:\\Temp
-
 set dir=C:\\Temp
+" OSX only
+"set backupdir=/tmp
+"set dir=/tmp
 
 set noundofile
 
